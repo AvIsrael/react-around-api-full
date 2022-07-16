@@ -68,7 +68,14 @@ class Api extends React.Component {
         });
     }
 }
-const jwt = localStorage.getItem('jwt');
-const api = new Api(jwt, 'https://api.avistepovyi.students.nomoreparties.sbs');
+
+const api = new Api({
+    baseUrl: 'https://api.avistepovyi.students.nomoreparties.sbs',
+    headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+    },
+});
 
 export default api;
