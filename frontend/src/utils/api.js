@@ -70,7 +70,7 @@ class Api extends React.Component {
 }
 
 const api = new Api({
-    baseUrl: 'https://api.avistepovyi.students.nomoreparties.sbs',
+    baseUrl: 'https://api.avi.stepovyi.students.nomoredomainssbs.ru',
     headers: {
         Accept: "application/json",
         'Content-Type': 'application/json',
