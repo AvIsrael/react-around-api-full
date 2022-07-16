@@ -1,0 +1,22 @@
+.auth-page__status {
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 15px;
+    transition: opacity ease 0.5s;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.auth-page__status:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+    .auth-page__status{
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 20px;
+    }
+
+}

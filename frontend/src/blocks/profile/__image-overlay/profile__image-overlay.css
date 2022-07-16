@@ -1,0 +1,25 @@
+.profile__image-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: visibility 0.5s, opacity 0.5s linear;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../../../images/button-editV2.svg);
+    background-size: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile__image-overlay:hover {
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}

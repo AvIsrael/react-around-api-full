@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(Inter-Variable.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(Inter-Variable.ttf);
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(Inter-Variable.ttf);
+    font-style: normal;
+    font-weight: 900;
+}

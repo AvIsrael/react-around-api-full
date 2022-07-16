@@ -1,0 +1,27 @@
+.popup__button {
+    background-image: url("../../../images/button-cancel.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    color: transparent;
+    top:-50px;
+    right: -50px;
+    /*top: calc(50% - 205px);*/
+    /*right: calc(50% - 255px);*/
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__button {
+        height: 26px;
+        width: 26px;
+        top: calc(50% - 200px);
+        right: calc(50% - 141px);
+    }
+}
+
+.popup__button:hover {
+    opacity: .6;
+}

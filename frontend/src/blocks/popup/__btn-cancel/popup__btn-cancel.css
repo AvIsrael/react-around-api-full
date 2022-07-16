@@ -1,0 +1,13 @@
+.popup__btn-cancel {
+    height: 30px;
+    width: 30px;
+    top: -40px;
+    right: -40px;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__btn-cancel {
+        top: -35px;
+        right: -35px;
+    }
+}

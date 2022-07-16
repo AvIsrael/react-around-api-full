@@ -1,0 +1,17 @@
+.header__user-data {
+    font-weight: 500;
+    line-height: 22px;
+    font-size: 18px;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 767px) {
+    .header__user-data {
+        font-size: 14px;
+        line-height: 17px;
+        max-width: 60px;
+        margin-left: 30px;
+    }
+}

@@ -1,0 +1,5 @@
+.elements__likes-zone {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+}

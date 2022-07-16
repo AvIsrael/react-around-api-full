@@ -1,0 +1,10 @@
+.elements__amount-likes {
+    justify-self: center;
+    padding: 0;
+    margin: 5px 15px 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.23;
+    text-align: center;
+}

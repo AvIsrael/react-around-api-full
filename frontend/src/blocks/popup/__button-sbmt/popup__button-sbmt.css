@@ -1,0 +1,26 @@
+.popup__button-sbmt {
+    margin-top: 48px;
+    margin-bottom: 36px;
+    padding: 14px 18px;
+    width: 100%;
+    border-style: none;
+    text-decoration: 0;
+    line-height: 22px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__button-sbmt {
+        margin: 46px auto 25px;
+        padding: 14px 14px;
+    }
+}
+
+.popup__button-sbmt:hover:not(:disabled) {
+    opacity: .8;
+    cursor: pointer;
+}

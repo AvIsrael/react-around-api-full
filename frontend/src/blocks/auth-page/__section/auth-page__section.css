@@ -1,0 +1,11 @@
+.auth-page__section {
+    min-height: 100vh;
+    max-width: 358px;
+    margin: 60px auto 0;
+}
+
+@media screen and (max-width: 767px) {
+    .auth-page__section {
+        max-width: 260px;
+    }
+}

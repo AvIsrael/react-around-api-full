@@ -1,0 +1,15 @@
+.auth-page__input {
+    all: unset;
+    font-size: 14px;
+    min-height: 27px;
+    line-height: 1.21;
+    border-bottom: 2px solid #cccccc;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+}
+
+@media  screen and (max-width: 767px) {
+  .auth-page__input {
+      margin-bottom: 15px;
+  }
+}

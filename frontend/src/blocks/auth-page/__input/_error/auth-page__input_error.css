@@ -1,0 +1,16 @@
+.auth-page__input_error {
+    font-size: 14px;
+    font-weight: normal;
+    min-height: 30px;
+    line-height: 1.25;
+    margin-top: 5px;
+    color: #ff0000;
+    visibility: hidden;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .auth-page__input_error {
+        margin: 0;
+    }
+}

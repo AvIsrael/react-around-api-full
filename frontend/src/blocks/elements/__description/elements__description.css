@@ -1,0 +1,11 @@
+.elements__description {
+    font-family: Inter, serif;
+    font-weight: 900;
+    line-height: 29px;
+    font-size: 24px;
+    margin: 25px 0 31px 21px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 225px;
+}

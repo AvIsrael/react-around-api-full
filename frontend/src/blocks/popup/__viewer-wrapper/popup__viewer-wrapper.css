@@ -1,0 +1,9 @@
+.popup__viewer-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    align-self: center;
+    margin: 0 auto;
+    position: relative;
+}
