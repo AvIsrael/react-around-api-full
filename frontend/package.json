@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "deployserver": "npm run build && scp -r ./build/* stepovoyas@avistepovyi.students.nomoredomainssbs.ru:/home/stepovoyas/frontend"
+    "deployserver": "npm run build && scp -r ./build/* stepovoyas@avi.stepovyi.students.nomoredomainssbs.ru:/home/stepovoyas/frontend"
   },
   "eslintConfig": {
     "extends": [
