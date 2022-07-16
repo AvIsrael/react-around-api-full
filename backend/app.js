@@ -28,7 +28,7 @@ app.use(cors());
 app.options('*', cors());
 app.use(express.json());
 app.use(helmet());
-app.user(requestLogin);
+app.use(requestLogin);
 
 // Server crash testing
 app.get('/crash-test', () => {
