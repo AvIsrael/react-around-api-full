@@ -30,6 +30,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(requestLogin);
 
+mongoose.connect('mongodb://127.0.0.1/aroundb');
+
 // Server crash testing
 app.get('/crash-test', () => {
   setTimeout(() => {
