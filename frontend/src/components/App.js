@@ -77,7 +77,6 @@ export function App() {
                 const userFromAPI = values[0].value; // handle API info
                 const userFromToken = values[1].value ? values[1].value.data : null; // handle localstorage data
                 setCurrentUser({ ...userFromToken, ...userFromAPI });
-                console.log(userFromToken);
                 if (userFromToken) {
                     setIsLoggedIn(true);
                     navigate('/');

@@ -7,13 +7,13 @@ module.exports.getAllCards = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('Cards not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((cards) => res.send(cards))
     .catch(next);
 };
 
 module.exports.createCard = (req, res, next) => {
   Card.create(req.body)
-    .then((user) => res.send({ data: user }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
@@ -22,7 +22,7 @@ module.exports.deleteCard = (req, res, next) => {
     .orFail(() => {
       throw new AuthorizationError('Unauthorized card deletion request', 403);
     })
-    .then((user) => res.send({ data: user }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
@@ -35,7 +35,7 @@ module.exports.likeCard = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('Card id not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
@@ -48,6 +48,6 @@ module.exports.dislikeCard = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('Card id not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((card) => res.send(card))
     .catch(next);
 };
