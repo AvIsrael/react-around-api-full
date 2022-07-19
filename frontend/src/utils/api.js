@@ -67,8 +67,7 @@ class Api {
 }
 
 const api = new Api(
-    // 'https://api.avi.stepovyi.students.nomoredomainssbs.ru',
-    'http://localhost:4000',
+    'https://api.avi.stepovyi.students.nomoredomainssbs.ru',
     {
         Accept: "application/json",
         'Content-Type': 'application/json',
