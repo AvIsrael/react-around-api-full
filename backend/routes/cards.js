@@ -8,8 +8,8 @@ const { createCardSchema, cardIdSchema } = require('./validation');
 
 router.get('/cards', getAllCards);
 router.post('/cards', auth, createCardSchema, createCard);
-router.delete('/cards/:id', auth, cardIdSchema, deleteCard);
-router.put('/cards/:id/likes', auth, cardIdSchema, likeCard);
-router.delete('/cards/:id/likes', auth, cardIdSchema, dislikeCard);
+router.delete('/cards/:cardId', auth, cardIdSchema, deleteCard);
+router.put('/cards/:cardId/likes', auth, cardIdSchema, likeCard);
+router.delete('/cards/:cardId/likes', auth, cardIdSchema, dislikeCard);
 
 module.exports = router;

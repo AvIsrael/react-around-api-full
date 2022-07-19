@@ -1,10 +1,7 @@
-import React from "react";
-
-class Api extends React.Component {
-    constructor(props) {
-        super(props);
-        this._baseUrl = props.baseUrl;
-        this._headers = props.headers;
+class Api {
+    constructor(baseUrl, headers) {
+        this._baseUrl = baseUrl;
+        this._headers = headers;
     }
 
     _customFetch = (url, headers) => {
@@ -20,7 +17,7 @@ class Api extends React.Component {
     }
 
     getInitialCards() {
-        return this._customFetch(`${this._baseUrl}/cards`, {
+        return this._customFetch(`${this._baseUrl}/cards`,{
             headers: this._headers,
         });
     }
@@ -62,13 +59,21 @@ class Api extends React.Component {
     }
 
     changeLikeCardStatus(cardId, isLiked) {
-        return this._customFetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+        return this._customFetch(`${this._baseUrl}/cards/${cardId}/likes`, {
             headers: this._headers,
             method: `${isLiked ? "DELETE" : "PUT"}`,
         });
     }
 }
-const jwt = localStorage.getItem('jwt');
-const api = new Api(jwt,'https://api.avi.stepovyi.students.nomoredomainssbs.ru');
+
+const api = new Api(
+    // 'https://api.avi.stepovyi.students.nomoredomainssbs.ru',
+    'http://localhost:4000',
+    {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+    },
+);
 
 export default api;

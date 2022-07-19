@@ -14,7 +14,7 @@ module.exports.getCurrentUser = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('User id not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -23,7 +23,7 @@ module.exports.getAllUsers = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('User not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -32,7 +32,7 @@ module.exports.getUser = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('User id not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -82,19 +82,27 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.updateProfile = (req, res, next) => {
-  User.findByIdAndUpdate(req.params.id, { name: req.body.name, new: true, runValidators: true })
+  User.findByIdAndUpdate(
+    req.user._id,
+    { name: req.body.name, about: req.body.about },
+    { new: true, runValidators: true },
+  )
     .orFail(() => {
       throw new NotFoundError('User id not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
 module.exports.updateAvatar = (req, res, next) => {
-  User.findByIdAndUpdate(req.params.id, { avatar: req.body.avatar, new: true, runValidators: true })
+  User.findByIdAndUpdate(
+    req.user._id,
+    { avatar: req.body.avatar },
+    { new: true, runValidators: true },
+  )
     .orFail(() => {
       throw new NotFoundError('User id not found.');
     })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };

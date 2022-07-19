@@ -30,7 +30,8 @@ export function App() {
     const navigate = useNavigate();
 
     const handleCardLike = (card) => {
-        const isLiked = card.likes.some((user) => user._id === currentUser._id);
+        const isLiked = card.likes.some((id) => id === currentUser._id);
+
         api
             .changeLikeCardStatus(card._id, isLiked)
             .then((newCard) => {
@@ -74,8 +75,8 @@ export function App() {
 
         Promise.allSettled([api.getUserInfo(), getUserInfoFromToken()])
             .then((values) => {
-                const userFromAPI = values[0].value; // handle API info
-                const userFromToken = values[1].value ? values[1].value.data : null; // handle localstorage data
+                const userFromAPI = values[0].value;
+                const userFromToken = values[1].value;
                 setCurrentUser({ ...userFromToken, ...userFromAPI });
                 if (userFromToken) {
                     setIsLoggedIn(true);
@@ -121,7 +122,6 @@ export function App() {
             });
     }
     const handleUpdateAvatar = (currentUser) => {
-        console.log(currentUser)
         api
             .editAvatar({ avatar: currentUser.avatar })
             .then((userData) => {

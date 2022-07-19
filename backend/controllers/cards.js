@@ -5,20 +5,22 @@ const AuthorizationError = require('../utils/autherror');
 module.exports.getAllCards = (req, res, next) => {
   Card.find({})
     .orFail(() => {
-      throw new NotFoundError('Cards not found.');
+      throw new NotFoundError('Card list is empty.');
     })
     .then((cards) => res.send(cards))
     .catch(next);
 };
 
 module.exports.createCard = (req, res, next) => {
-  Card.create(req.body)
+  const { name, link } = req.body;
+  const { _id } = req.user;
+  Card.create({ name, link, owner: _id })
     .then((card) => res.send(card))
     .catch(next);
 };
 
 module.exports.deleteCard = (req, res, next) => {
-  Card.findByIdAndRemove(req.params.id)
+  Card.findByIdAndRemove(req.params.cardId)
     .orFail(() => {
       throw new AuthorizationError('Unauthorized card deletion request', 403);
     })
@@ -28,7 +30,7 @@ module.exports.deleteCard = (req, res, next) => {
 
 module.exports.likeCard = (req, res, next) => {
   Card.findByIdAndUpdate(
-    req.params.id,
+    req.params.cardId,
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
@@ -41,7 +43,7 @@ module.exports.likeCard = (req, res, next) => {
 
 module.exports.dislikeCard = (req, res, next) => {
   Card.findByIdAndUpdate(
-    req.params.id,
+    req.params.cardId,
     { $pull: { likes: req.user._id } },
     { new: true },
   )

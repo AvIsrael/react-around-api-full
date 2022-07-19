@@ -1,5 +1,5 @@
-const BASE_URL = 'https://register.nomoreparties.co';
-
+// const BASE_URL = 'https://api.avi.stepovyi.students.nomoredomainssbs.ru';
+const BASE_URL = 'http://localhost:4000';
 const handleResponse = (res) => (res.ok ? res.json() : Promise.reject(`Error: ${res.status}`));
 
 const registerUser = (user) => {
