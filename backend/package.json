@@ -2,7 +2,7 @@
   "name": "around-express",
   "version": "1.0.0",
   "description": "Project 12",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "lint": "npx eslint .",
@@ -36,8 +36,6 @@
     "helmet": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.4",
-    "node": "^17.7.2",
-    "pg-promise": "^10.11.1",
     "validator": "^13.7.0",
     "winston": "^3.8.1"
   }

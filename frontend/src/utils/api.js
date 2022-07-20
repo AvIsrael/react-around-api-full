@@ -1,3 +1,5 @@
+import {BASE_URL} from "./baseurl";
+
 class Api {
     constructor(baseUrl, headers) {
         this._baseUrl = baseUrl;
@@ -67,7 +69,7 @@ class Api {
 }
 
 const api = new Api(
-    'https://api.avi.stepovyi.students.nomoredomainssbs.ru',
+    BASE_URL,
     {
         Accept: "application/json",
         'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
-const BASE_URL = 'https://api.avi.stepovyi.students.nomoredomainssbs.ru';
+import {BASE_URL} from "./baseurl";
+
 const handleResponse = (res) => (res.ok ? res.json() : Promise.reject(`Error: ${res.status}`));
 
 const registerUser = (user) => {

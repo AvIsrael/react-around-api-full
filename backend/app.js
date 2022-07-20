@@ -3,25 +3,20 @@ const cors = require('cors');
 const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
-const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
 const { requestLogin, errorLogin } = require('./middleware/loging');
 const errorhandler = require('./middleware/errorhandler');
 const NotFoundError = require('./utils/notfounderror');
+const { limiter } = require('./utils/ratelimiter');
 
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 
-mongoose.connect('mongodb://127.0.0.1/aroundb');
+const { DB_LINK = 'mongodb://127.0.0.1/aroundb' } = process.env;
+mongoose.connect(DB_LINK);
 
 const { PORT = 3000, NODE_ENV } = process.env;
 const app = express();
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  standardHeaders: true,
-  legacyHeaders: false,
-});
 
 app.use(limiter);
 app.use(cors());

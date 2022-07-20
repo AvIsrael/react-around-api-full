@@ -20,11 +20,14 @@ module.exports.createCard = (req, res, next) => {
 };
 
 module.exports.deleteCard = (req, res, next) => {
-  Card.findByIdAndRemove(req.params.cardId)
-    .orFail(() => {
-      throw new AuthorizationError('Unauthorized card deletion request', 403);
+  Card.findOne({ _id: req.params.cardId })
+    .then((card) => {
+      if (!card) throw new NotFoundError('Card not found.');
+      if (String(card.owner) !== req.user._id) throw new AuthorizationError('Card is not belong to current user', 403);
+      return Card.findByIdAndRemove(req.params.cardId).then((deletedCard) => {
+        res.send(deletedCard);
+      });
     })
-    .then((card) => res.send(card))
     .catch(next);
 };
 
